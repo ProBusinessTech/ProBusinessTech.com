@@ -1,7 +1,6 @@
 <footer class="container">
   <p class="float-end"><a href="#">Back to top</a></p>
   <p>
-    <a href="https://github.com/mandrasch/11ty-plain-bootstrap5">GitHub</a> ·
-    <a href="{{ '/pages/imprint' | url }}">Imprint</a> · <a href="{{ '/pages/privacy' | url }}">Privacy</a>
+    <a href="{{ meta.url }}">{{ site.title }} &copy; Copyright {{ build.timestamp | dateToFormat('yyyy') }}</a> · <a href="{{ '/pages/about' | url }}">About</a> · <a href="{{ '/pages/contact' | url }}">Contact</a> · <a href="{{ '/pages/privacy' | url }}">Privacy</a><!-- · <a href="https://github.com/mandrasch/11ty-plain-bootstrap5">GitHub</a>-->
   </p>
 </footer>

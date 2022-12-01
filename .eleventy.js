@@ -14,8 +14,8 @@ console.log('pathPrefix is set to ...', pathPrefix);
 // see "eleventyConfig.addGlobalData("site", globalData);"" below
 // related: https://github.com/11ty/eleventy/issues/1641
 const globalSiteData = {
-  title: "11ty-plain-bootstrap5",
-  description: "Template for static site generator Eleventy with Boostrap 5 and SCSS/JS compilation via laravel-mix.",
+  title: "ProBusinessTech.com",
+  description: "Professional Business Technologies, Inc.",
   locale: 'en',
   baseUrl: baseUrl,
   pathPrefix: pathPrefix,
@@ -57,6 +57,11 @@ async function imageShortcode(src, alt, sizes = "100vw") {
     </picture>`;
 }
 
+const env = require('./src/data/env');
+const filters = require('./utils/filters.js')
+// const transforms = require('./utils/transforms.js')
+const shortcodes = require('./utils/shortcodes.js')
+
 module.exports = function (eleventyConfig) {
 
   // Set site title
@@ -66,6 +71,21 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // Filters
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName])
+  })
+  
+  // Shortcodes
+  Object.keys(shortcodes).forEach((shortcodeName) => {
+    eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
+  })
+
+  // Transforms
+  // Object.keys(transforms).forEach((transformName) => {
+  //   eleventyConfig.addTransform(transformName, transforms[transformName])
+  // })
+  
   // Copy dist/ files from laravel mix
   eleventyConfig.addPassthroughCopy("dist/"); // path is relative from root
 
@@ -104,7 +124,7 @@ module.exports = function (eleventyConfig) {
       layouts: "layouts", // this path is releative to input-path (src/)
       data: "data", // this path is releative to input-path (src/)
     },
-    templateFormats: ["njk", "md"],
+    templateFormats: ["js", "njk", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
     // important for github pages build (subdirectory):

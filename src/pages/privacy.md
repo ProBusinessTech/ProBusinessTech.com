@@ -5,4 +5,6 @@ eleventyNavigation:
   hideInMainNav: true
 ---
 
-Add your privacy info here.
+## Privacy Policy
+
+Your privacy is just as important to us as it is to you. Maybe more.
