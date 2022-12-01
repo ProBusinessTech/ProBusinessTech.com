@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ site.title }} - {{ title or meta.title }}</title>
 
-    <!-- <link rel="stylesheet" href="{{ '/dist/app.css' | url }}" /> -->
-    <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}" />
+    {# <link rel="stylesheet" href="{{ '/dist/app.css' | url }}" /> #}
+    {# <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}" /> #}
+    <link rel="stylesheet" href="{{ '/dist/app.css' | url }}" />
 
     {% include "meta.njk" %}
   </head>
 
   <body>
-    <!-- skiplinks -->
+    {# skiplinks #}
     <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
 
     {% include "header.njk" %}
