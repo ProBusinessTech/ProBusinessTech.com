@@ -1,5 +1,6 @@
 [
 	{"text": "About", "url": "/about/"},
 	{"text": "Contact", "url": "/contact/"},
-	{"text": "Privacy", "url": "/privacy/"}
+	{"text": "Privacy", "url": "/privacy/"},
+	{"text": "Demos", "url": "https://demos.probusinesstech.com"}
 ]
