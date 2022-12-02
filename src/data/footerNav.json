@@ -2,5 +2,5 @@
 	{"text": "About", "url": "/about/"},
 	{"text": "Contact", "url": "/contact/"},
 	{"text": "Privacy", "url": "/privacy/"},
-	{"text": "Privacy", "url": "/demos/"}
+	{"text": "Demos", "url": "/demos/"}
 ]
