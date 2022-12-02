@@ -12,7 +12,7 @@
 {# Nav Links  #}
 <ul class="navbar-nav ms-auto">
     {%- for item in collections.all | eleventyNavigation -%}
-    {%- if item.url and item.hideInMainNav != true -%}
+    {%- if item.url and item.hideInMainNav != true and (item.title != 'Demos' or flags.demos == 1) -%}
     {%- set isCurrent = (item.url == page.url) -%}
     {%- set isParent = item.url != '/' and item.url in page.url -%}
     {%- set hasChildren = item.children.length -%}

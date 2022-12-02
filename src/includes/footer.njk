@@ -3,7 +3,9 @@
   <p>
     <a href="/">{{ site.title }} &copy; Copyright {{ build.timestamp | dateToFormat('yyyy') }}</a>
     {%- for item in footerNav -%}
-    &nbsp;·&nbsp;<a href="{%- if item.url.startsWith('~') -%}{{env.base.url}}{{item.url.substring(1, item.url.length)}}{%- else -%}{{item.url}}{%- endif -%}">{{item.text}}</a>
+      {% if (item.title != 'Demos') or (flags.demos == 1) %}
+    &nbsp;·&nbsp;<a href="{%- if item.url.startsWith('~') -%}{{env.base.url}}{{item.url.substring(1, item.url.length)}}{%- else -%}{{item.url}}{%- endif -%}">{{item.title}}</a>
+     {% endif %}
     {%- endfor -%}
   </p>
 </footer>

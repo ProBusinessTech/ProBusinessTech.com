@@ -1,0 +1,12 @@
+const fetch = require('node-fetch');
+module.exports = function () {
+	console.log("Fetching repos data");
+	return fetch('https://api.github.com/users/ProBusinessTech/repos')
+		.then(raw => {
+			console.log(raw);
+		})
+		.then(res => res.json())
+		.then(json => {
+		  return json;
+		});
+}

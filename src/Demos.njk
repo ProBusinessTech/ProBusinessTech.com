@@ -3,7 +3,16 @@ layout: base
 eleventyNavigation:
   key: Demos
   order: 3
-  url: https://demos.probusinesstech.com
 title: Demos
-
 ---
+
+<div class="row align-items-md-stretch">  
+  <div class="col-md-6 mt-3">
+  {%- for repo in repos -%}    
+      <div class="p-5 text-white bg-dark rounded-3" style="background-color: #ff7979">
+        <h2><a href="{{ repo.html_url | url }}">{{repo.name}}</a></a></h2>
+        <p>{{repo.description}}</p>
+      </div><br/>
+  {%- endfor -%}
+</div>
+</div>
